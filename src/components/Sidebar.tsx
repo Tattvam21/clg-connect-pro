@@ -70,7 +70,7 @@ export function Sidebar() {
   }
 
   return (
-    <div className="h-screen w-64 bg-white border-r">
+    <div className="fixed left-0 top-0 h-screen w-64 bg-white border-r">
       <SidebarContent />
     </div>
   );
