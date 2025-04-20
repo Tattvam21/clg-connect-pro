@@ -11,7 +11,7 @@ interface SuggestedConnectionProps {
 
 export function SuggestedConnection({ name, role, batch }: SuggestedConnectionProps) {
   return (
-    <Card className="mb-3">
+    <Card className="mb-3 hover:shadow-sm transition-all">
       <CardContent className="pt-4 flex items-center gap-3">
         <div className="bg-blue-100 p-2 rounded-full">
           <User className="h-5 w-5 text-blue-600" />
@@ -21,7 +21,7 @@ export function SuggestedConnection({ name, role, batch }: SuggestedConnectionPr
           <p className="text-sm text-gray-600">{role}</p>
           <p className="text-xs text-gray-500">Batch of {batch}</p>
         </div>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" className="text-xs">
           Connect
         </Button>
       </CardContent>
