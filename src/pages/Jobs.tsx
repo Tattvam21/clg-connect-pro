@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { JobPosting } from "@/components/JobPosting";
@@ -13,21 +12,24 @@ export default function Jobs() {
       title: "Software Engineer", 
       company: "Tech Innovations Inc.", 
       location: "San Francisco, CA",
-      field: "Software Development"
+      field: "Software Development",
+      posted: "2 days ago"
     },
     { 
       id: 2, 
       title: "Product Manager", 
       company: "Global Solutions", 
       location: "New York, NY", 
-      field: "Product Management"
+      field: "Product Management",
+      posted: "1 week ago"
     },
     { 
       id: 3, 
       title: "Data Scientist", 
       company: "Data Dynamics", 
       location: "Seattle, WA", 
-      field: "Data Science"
+      field: "Data Science",
+      posted: "3 days ago"
     }
   ];
 
@@ -53,6 +55,7 @@ export default function Jobs() {
             title={job.title}
             company={job.company}
             location={job.location}
+            posted={job.posted}
           />
         ))}
       </div>
