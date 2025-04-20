@@ -12,7 +12,7 @@ interface JobPostingProps {
 
 export function JobPosting({ title, company, location, posted }: JobPostingProps) {
   return (
-    <Card className="hover:shadow-md transition-shadow">
+    <Card className="hover:shadow-md transition-shadow w-full">
       <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-2">
         <div className="bg-blue-100 p-2 rounded-full shrink-0">
           <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
@@ -30,9 +30,9 @@ export function JobPosting({ title, company, location, posted }: JobPostingProps
           </span>
           <span>{posted}</span>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" className="text-xs w-full sm:w-auto">View Details</Button>
-          <Button size="sm" className="text-xs w-full sm:w-auto">Apply Now</Button>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Button variant="outline" size="sm" className="text-xs w-full">View Details</Button>
+          <Button size="sm" className="text-xs w-full">Apply Now</Button>
         </div>
       </CardContent>
     </Card>
