@@ -63,11 +63,11 @@ export default function Index() {
             <p className="text-gray-600">Welcome back to Alumni Connect</p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
             {/* Job Postings - Center */}
-            <div className="md:col-span-6 space-y-4">
+            <div className="lg:col-span-6 space-y-4">
               <div className="flex justify-between items-center">
-                <h2 className="text-xl font-bold">Latest Job Postings</h2>
+                <h2 className="text-lg md:text-xl font-bold">Latest Job Postings</h2>
                 <a href="#" className="text-sm text-blue-600 hover:underline">View all</a>
               </div>
               <div className="space-y-4">
@@ -77,10 +77,10 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Sidebar */}
-            <div className="md:col-span-3">
-              <div className="mb-6">
-                <h2 className="text-xl font-bold mb-3">Suggested Connections</h2>
+            {/* Right Sidebar - Connections and Events */}
+            <div className="lg:col-span-3 space-y-6">
+              <div>
+                <h2 className="text-lg md:text-xl font-bold mb-3">Suggested Connections</h2>
                 {connections.map((connection, index) => (
                   <SuggestedConnection key={index} {...connection} />
                 ))}
@@ -88,7 +88,7 @@ export default function Index() {
               
               {/* Events Section */}
               <div>
-                <h2 className="text-xl font-bold mb-3">Upcoming Events</h2>
+                <h2 className="text-lg md:text-xl font-bold mb-3">Upcoming Events</h2>
                 <div className="bg-white rounded-lg p-4 shadow-sm border">
                   <h3 className="font-semibold text-blue-600">Annual Alumni Meetup</h3>
                   <p className="text-sm text-gray-500">June 15, 2023 • Virtual</p>
@@ -99,7 +99,7 @@ export default function Index() {
             </div>
 
             {/* Chat Area */}
-            <div className="md:col-span-3">
+            <div className="lg:col-span-3">
               <ChatArea />
             </div>
           </div>
