@@ -3,6 +3,7 @@ import { Home, Users, MessageSquare, Briefcase, BookOpen, Gift, Menu } from "luc
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Dashboard", icon: Home, path: "/" },
@@ -15,6 +16,7 @@ const navigation = [
 
 export function Sidebar() {
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   const SidebarContent = () => (
     <div className="h-screen flex flex-col">
@@ -26,10 +28,15 @@ export function Sidebar() {
           <Button
             key={item.name}
             variant="ghost"
-            className="w-full justify-start gap-3 mb-1"
+            className={`w-full justify-start gap-3 mb-1 ${
+              location.pathname === item.path ? "bg-blue-50 text-blue-600" : ""
+            }`}
+            asChild
           >
-            <item.icon className="h-5 w-5" />
-            {item.name}
+            <Link to={item.path}>
+              <item.icon className="h-5 w-5" />
+              {item.name}
+            </Link>
           </Button>
         ))}
       </nav>
