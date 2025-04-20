@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { JobPosting } from "@/components/JobPosting";
@@ -42,13 +43,13 @@ export default function Jobs() {
   return (
     <div className="p-4 md:p-8">
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Job Postings</h1>
-      <div className="max-w-2xl mb-6">
+      <div className="w-full max-w-2xl mb-6">
         <SearchBar 
           placeholder="Search jobs by title, company, or field..." 
           onSearch={setSearchQuery}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredJobs.map(job => (
           <JobPosting
             key={job.id}
