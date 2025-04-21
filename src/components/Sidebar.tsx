@@ -1,9 +1,9 @@
-
 import { Home, Users, MessageSquare, Briefcase, BookOpen, Gift, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link, useLocation } from "react-router-dom";
+import { ThemeToggle } from "./ui/theme-toggle";
 
 const navigation = [
   { name: "Dashboard", icon: Home, path: "/" },
@@ -21,7 +21,8 @@ export function Sidebar() {
   const SidebarContent = () => (
     <div className="h-screen flex flex-col">
       <div className="flex items-center justify-between p-4 border-b">
-        <h2 className="font-bold text-xl text-blue-600">Alumni Connect</h2>
+        <h2 className="font-bold text-xl text-blue-600 dark:text-blue-400">Alumni Connect</h2>
+        <ThemeToggle />
       </div>
       <nav className="flex-1 overflow-y-auto p-4 space-y-2">
         {navigation.map((item) => (
@@ -29,7 +30,9 @@ export function Sidebar() {
             key={item.name}
             variant="ghost"
             className={`w-full justify-start gap-3 mb-1 ${
-              location.pathname === item.path ? "bg-blue-50 text-blue-600" : ""
+              location.pathname === item.path 
+                ? "bg-blue-50 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300" 
+                : "hover:bg-gray-100 dark:hover:bg-gray-800/50"
             }`}
             asChild
           >
@@ -40,14 +43,16 @@ export function Sidebar() {
           </Button>
         ))}
       </nav>
-      <div className="p-4 border-t">
-        <div className="flex items-center gap-3">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <Users className="h-5 w-5 text-blue-600" />
-          </div>
-          <div>
-            <p className="font-medium text-sm">John Smith</p>
-            <p className="text-xs text-gray-500">Batch of 2018</p>
+      <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="bg-blue-100 dark:bg-blue-800/70 p-2 rounded-full">
+              <Users className="h-5 w-5 text-blue-600 dark:text-blue-300" />
+            </div>
+            <div>
+              <p className="font-medium text-sm">John Smith</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Batch of 2018</p>
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +75,7 @@ export function Sidebar() {
   }
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-64 bg-white border-r">
+    <div className="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 shadow-sm">
       <SidebarContent />
     </div>
   );
