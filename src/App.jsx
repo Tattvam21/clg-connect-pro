@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Sidebar } from "@/components/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 import Index from "./pages/Index";
@@ -25,8 +24,7 @@ const App = () => (
       <BrowserRouter>
         <SidebarProvider>
           <div className="flex min-h-screen">
-            <Sidebar />
-            <main className="flex-1 ml-0 md:ml-64">
+            <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/network" element={<Network />} />
