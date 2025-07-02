@@ -6,7 +6,6 @@ import { JobPosting } from "@/components/JobPosting";
 export default function Jobs() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Sample job postings
   const jobPostings = [
     { 
       id: 1, 

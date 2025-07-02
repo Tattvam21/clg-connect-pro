@@ -1,9 +1,9 @@
+
 import { useState } from "react";
 import { ChatArea } from "@/components/ChatArea";
 import { ChatContact } from "@/components/ChatContact";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Sample contacts data - in a real app this would come from an API
 const contacts = [
   {
     id: 1,
@@ -26,11 +26,11 @@ const contacts = [
 ];
 
 export default function Messages() {
-  const [selectedContact, setSelectedContact] = useState<number>(1);
+  const [selectedContact, setSelectedContact] = useState(1);
   const isMobile = useIsMobile();
   const [showChat, setShowChat] = useState(false);
 
-  const handleContactClick = (contactId: number) => {
+  const handleContactClick = (contactId) => {
     setSelectedContact(contactId);
     if (isMobile) {
       setShowChat(true);

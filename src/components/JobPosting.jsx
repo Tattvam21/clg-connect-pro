@@ -3,14 +3,7 @@ import { Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 
-interface JobPostingProps {
-  title: string;
-  company: string;
-  location: string;
-  posted: string;
-}
-
-export function JobPosting({ title, company, location, posted }: JobPostingProps) {
+export function JobPosting({ title, company, location, posted }) {
   return (
     <Card className="hover:shadow-md transition-shadow w-full">
       <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-2">

@@ -64,7 +64,6 @@ export default function Index() {
           </header>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
-            {/* Job Postings - Center */}
             <div className="lg:col-span-6 space-y-4">
               <div className="flex justify-between items-center">
                 <h2 className="text-lg md:text-xl font-bold">Latest Job Postings</h2>
@@ -77,7 +76,6 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Sidebar - Connections and Events */}
             <div className="lg:col-span-3 space-y-6">
               <div>
                 <h2 className="text-lg md:text-xl font-bold mb-3">Suggested Connections</h2>
@@ -86,7 +84,6 @@ export default function Index() {
                 ))}
               </div>
               
-              {/* Events Section */}
               <div>
                 <h2 className="text-lg md:text-xl font-bold mb-3">Upcoming Events</h2>
                 <div className="bg-white rounded-lg p-4 shadow-sm border">
@@ -98,7 +95,6 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Chat Area */}
             <div className="lg:col-span-3">
               <ChatArea />
             </div>
